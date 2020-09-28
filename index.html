@@ -4,12 +4,28 @@
           <title>Polka.Deals</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <style>
+  
+
+  
 @import url(https://indestructibletype.com/fonts/Jost.css);
 
   
 .row-container {display: flex; width: 90%; height: 100%; flex-direction: column; margin: 0 auto;  background-color: white; overflow: hidden;}
-.second-row { flex-grow: 1; border: none; margin: 0; padding: 0; }
+.container-wide { flex-grow: 1; border: none; margin: 0; padding: 0; }
+.container-tall { flex-grow: 1; border: none; margin: 0; padding: 0; }
 
+    @media (max-width: 600px) {
+  #container-wide {
+    display: none;
+  }
+}
+  
+    @media (min-width: 601px) {
+  #container-tall {
+    display: none;
+  }
+}
+  
 body {
   overflow-x: hidden;
 }
@@ -38,11 +54,9 @@ body {
   <div class='photo'>
     <picture>
       <div class="row-container">
-    <iframe  media='(min-width: 601px)' src="https://slides.com/polka/deals/fullscreen" class="second-row" scrolling="no" frameborder="0" style=" border: none; margin: 0; padding: 0;"></iframe>
+    <iframe src="https://slides.com/polka/deals/fullscreen" class="container-wide" scrolling="no" frameborder="0" style=" border: none; margin: 0; padding: 0;"></iframe>
   
-    <iframe media='(max-width: 600px)' src="https://slides.com/polka/deals-tall/fullscreen" class="second-row" scrolling="no" frameborder="0" style=" border: none; margin: 0; padding: 0;"></iframe>
-    
-      <img src='https://drive.google.com/uc?id=1TMzGwE8my1gcrm4mvn3sTNhZpqR-XA6C'/>
+    <iframe src="https://slides.com/polka/deals-tall/fullscreen" class="container-tall" scrolling="no" frameborder="0" style=" border: none; margin: 0; padding: 0;"></iframe>
         
   </div>
     </picture>
