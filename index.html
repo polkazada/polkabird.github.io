@@ -14,13 +14,13 @@
 .container-wide { flex-grow: 1; border: none; margin: 0; padding: 0; }
 .container-tall { flex-grow: 1; border: none; margin: 0; padding: 0; }
 
-    @media (max-width: 400px) {
+    @media screen and (orientation:portrait) {
   .container-wide {
     display: none;
   }
 }
   
-    @media (min-width: 401px) {
+    @media screen and (orientation:landscape) {
   .container-tall {
     display: none;
   }
