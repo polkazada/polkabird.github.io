@@ -17,16 +17,20 @@ setInterval(function(){
     var blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
     var holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
     var cTop = -(500-characterTop);
-    if((characterTop>480)||((blockLeft<20)&&(blockLeft>-50)&&((cTop<holeTop)||(cTop>holeTop+130)))){
+    if((characterTop>472)||((blockLeft<40)&&(blockLeft>-30)&&((cTop<holeTop)||(cTop>holeTop+122)))){
         alert("Game over. Score: "+(counter-1));
         character.style.top = 100 + "px";
         counter=0;
+        window.location = '#';
+
+
     }
 },10);
 
 function jump(){
     jumping = 1;
     let jumpCount = 0;
+    document.getElementById('character').style.transform = "rotate(-45deg)";
     var jumpInterval = setInterval(function(){
         var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
         if((characterTop>6)&&(jumpCount<15)){
@@ -34,9 +38,19 @@ function jump(){
         }
         if(jumpCount>20){
             clearInterval(jumpInterval);
+            document.getElementById('character').style.transform = "rotate(45deg)";
             jumping=0;
             jumpCount=0;
         }
         jumpCount++;
     },10);
+}
+
+document.body.onkeydown = function(e) {
+  if (e.key == " " ||
+      e.code == "Space" ||      
+      e.keyCode == 32      
+  ) {
+    jump();
+  }
 }
