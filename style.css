@@ -14,7 +14,7 @@
 }
 #game{
     touch-action: manipulation;
-    width: calc(100% - 50px);
+    width: 100%;
     height: 500px;
     margin-left: 50px;
     background: inherit;
@@ -46,6 +46,7 @@
     width: 50px;
     height: 35px;
     background-size: 50px;
+    left:50px;
     background-color: none;
     background-image: url("https://photos.polka.ph/polkabird/sprite.png");
     position: absolute;
