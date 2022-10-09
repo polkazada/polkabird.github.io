@@ -4,40 +4,49 @@
 }
 #game{
     touch-action: manipulation;
-    width: 100vw;
-    height: 100vh;
-    border: 1px solid black;
-    margin: auto;
-    overflow: hidden;
+    width: calc(100% - 50px);
+    height: 500px;
+    margin-left: 50px;
+    background-color: #fff2f3;
 }
 #block{
     width: 50px;
     height: 500px;
     background-color: black;
     position: relative;
-    left: 400px;
-    animation: block 2s infinite linear;
+    left: 100vw;
+    animation: block 1.5s infinite linear;
 }
 @keyframes block{
-    0%{left:400px}
-    100%{left:-50px}
+    0%{left:100vw}
+    100%{left:-100px}
 }
 #hole{
     width: 50px;
     height: 150px;
-    background-color: white;
+    background-color: #fff2f3;
     position: relative;
-    left: 400px;
+    left: 100vw;
     top: -500px;
-    animation: block 2s infinite linear;
+    box-shadow: 5px 0px #fff2f3, -5px 0px #fff2f3;
+
+    animation: block 1.5s infinite linear;
 }
 #character{
-    width: 20px;
-    height: 20px;
-    background-size: 20px;
-    background-color: white;
-    background-image: url("https://utils.polka.ph/imgs/favicon.png");
+    width: 40px;
+    height: 28px;
+    background-size: 40px;
+    background-color: none;
+    background-image: url("https://photos.polka.ph/polkabird/sprite.png");
     position: absolute;
     top: 100px;
-    border-radius: 50%;
+}
+#ground {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 500px;
+    height: calc(100vh - 500px);
+    border-top: #73CA19 solid 30px;
+    background-color: #E3DB9D;
 }
