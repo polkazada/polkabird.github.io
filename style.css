@@ -14,10 +14,11 @@
 }
 #game{
     touch-action: manipulation;
-    width: 100%;
+    width: 100vw;
     height: 500px;
-    margin-left: 50px;
+    margin: auto;
     background: inherit;
+    overflow: hidden;
 }
 #block{
     width: 50px;
@@ -52,20 +53,20 @@
     position: absolute;
     top: 100px;
 }
-#heart{
-    position: fixed;
-    text-align: right;
+#heartcontainer{
+    position: fixed!important;
     top: 20px;
     right: 30px;
-    background-image: url("https://photos.polka.ph/polkabird/heart.png");
-    margin-left: 20px;
-    width: 44px;
-    height: 40px;
-    background-size: 44px;
     z-index: 300;
 }
+#heartcontainer > img {
+    display: inline-block;
+    src: url('https://photos.polka.ph/polkabird/heart.png');
+    width: 44px;
+    margin-left: 20px;
+}
 #ground {
-    width: 100%;
+    width: 100vw;
     position: fixed;
     left: 0;
     top: 500px;
