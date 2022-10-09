@@ -3,6 +3,7 @@ var hole = document.getElementById("hole");
 var character = document.getElementById("character");
 var jumping = 0;
 var counter = 0;
+var lives = 5;
 
 hole.addEventListener('animationiteration', () => {
     var random = -((Math.random()*300)+150);
@@ -17,11 +18,12 @@ setInterval(function(){
     var blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
     var holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
     var cTop = -(500-characterTop);
-    if((characterTop>472)||((blockLeft<40)&&(blockLeft>-30)&&((cTop<holeTop)||(cTop>holeTop+122)))){
-        alert("Game over. Score: "+(counter-1));
+    if((characterTop>458)||((blockLeft<60)&&(blockLeft>-10)&&((cTop<holeTop)||(cTop>holeTop+108)))){
+        lives = lives - 1;
+        alert("Game over.\nScore: "+(counter-1)+"\nLives Remaining: "+lives);
         character.style.top = 100 + "px";
         counter=0;
-        window.location = '#';
+        location.reload();
 
 
     }
@@ -38,7 +40,7 @@ function jump(){
         }
         if(jumpCount>20){
             clearInterval(jumpInterval);
-            document.getElementById('character').style.transform = "rotate(45deg)";
+            document.getElementById('character').style.transform = "rotate(35deg)";
             jumping=0;
             jumpCount=0;
         }
