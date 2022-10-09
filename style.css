@@ -2,17 +2,27 @@
     padding: 0;
     margin: 0;
 }
+#sky{
+    background-image: url("https://photos.polka.ph/polkabird/sky-tile-v2.png");
+    background-repeat: repeat;
+    background-size: 250px;
+    position: fixed;
+    left:0;
+    top:0;
+    width: 100vw;
+    height: 500px;
+}
 #game{
     touch-action: manipulation;
     width: calc(100% - 50px);
     height: 500px;
     margin-left: 50px;
-    background-color: #fff2f3;
+    background: inherit;
 }
 #block{
     width: 50px;
     height: 500px;
-    background-color: black;
+    background-color: #373C42;
     position: relative;
     left: 100vw;
     animation: block 1.5s infinite linear;
@@ -24,22 +34,40 @@
 #hole{
     width: 50px;
     height: 150px;
-    background-color: #fff2f3;
+    background: inherit;
     position: relative;
     left: 100vw;
-    top: -500px;
+    top: -325px;
     box-shadow: 5px 0px #fff2f3, -5px 0px #fff2f3;
 
     animation: block 1.5s infinite linear;
 }
 #character{
-    width: 40px;
-    height: 28px;
-    background-size: 40px;
+    width: 60px;
+    height: 42px;
+    background-size: 60px;
     background-color: none;
     background-image: url("https://photos.polka.ph/polkabird/sprite.png");
     position: absolute;
     top: 100px;
+}
+#heartcontainer{
+    position: fixed;
+    text-align: right;
+    top: 20px;
+    right: 30px;
+    z-index: 300;
+}
+#heart {
+    display: inline-block;
+    background-image: url("https://photos.polka.ph/polkabird/heart.png");
+    margin-left: 20px;
+    width: 44px;
+    height: 40px;
+    background-size: 44px;
+}
+#clonehearts {
+    display: inline-block;
 }
 #ground {
     width: 100%;
@@ -47,6 +75,8 @@
     left: 0;
     top: 500px;
     height: calc(100vh - 500px);
-    border-top: #73CA19 solid 30px;
+    background-image: url("https://photos.polka.ph/polkabird/grass.jpg");
+    background-repeat: repeat-x;
+    background-size: 40px;
     background-color: #E3DB9D;
 }
