@@ -19,13 +19,19 @@ setInterval(function(){
     var holeTop = parseInt(window.getComputedStyle(hole).getPropertyValue("top"));
     var cTop = -(500-characterTop);
     if((characterTop>465)||((blockLeft<95)&&(blockLeft>25)&&((cTop<holeTop)||(cTop>holeTop+115)))){
+        
+        hole.style.animationName = "none";
+        block.style.animationName = "none";
+        
+        requestAnimationFrame(() => {
+            hole.style.animationName = "";
+            block.style.animationName = ""; 
+        });
+        
         lives = lives - 1;
-        alert("Game over.\nScore: "+(counter-1)+"\nLives Remaining: "+lives);
+        alert("Game over.\nScore: "+counter+"\nLives Remaining: "+lives);
         character.style.top = 100 + "px";
         counter=0;
-        location.reload();
-
-
     }
 },10);
 
