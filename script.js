@@ -29,6 +29,7 @@ hole.addEventListener('animationiteration', () => {
     var random = -((Math.random()*300)+150);
     hole.style.top = random + "px";
     counter++;
+    score.innerHTML = counter;
 });
 
 // Get the modal
@@ -46,17 +47,28 @@ function openModal() {
     jumping=1;
     modalUp=1;
     lives = lives - 1;
+    livesRemaining.innerHTML = "Lives Remaining: " + lives;
     if(lives<5){heart5.style.display = "none";};
     if(lives<4){heart4.style.display = "none";};
     if(lives<3){heart3.style.display = "none";};
     if(lives<2){heart2.style.display = "none";};
-    if(lives<1){heart1.style.display = "none"; window.location.href = "https://shop.polka.ph";};
+    if(lives<1){heart1.style.display = "none";
+                closeBtn.style.display = "none";
+                loadingNextGame.style.display = "block";
+                livesRemaining.innerHTML = 'Final Score: <span style="color: #ff004a; font-weight: bold;">' + counter + '</span><br><b>🎉 Congratulations! 🎊</b>';
+                pleaseWait.style.display = "block";
+                gameOver.innerHTML = "GAME OVER!";
+               };
     
-    score.innerHTML = "Score: " + counter;
-    livesRemaining.innerHTML = "Lives Remaining: " + lives;
+
+
     modal.style.display = "block";
 
 
+};
+
+function goToStore() {
+    window.location.href = "https://shop.polka.ph";
 };
 
 // When the user clicks on <span> (x), close the modal
@@ -70,7 +82,6 @@ closeBtn.onclick = function() {
         });
     
     character.style.top = 100 + "px";
-    counter=0;
     modal.style.display = "none";
 
 
