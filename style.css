@@ -2,6 +2,11 @@
     padding: 0;
     margin: 0;
 }
+
+body {
+    overflow: hidden;
+}
+
 #sky{
     background-image: url("https://photos.polka.ph/polkabird/sky-tile-v2.png");
     background-repeat: repeat;
@@ -29,6 +34,45 @@
     left: 100vw;
     animation: block 1.5s infinite linear;
     animation-play-state: paused;
+
+}
+
+#loadingNextGame {
+    display: none;
+    width: calc(100% - 24px);
+    max-width: calc(100% - 24px);
+    border-radius: 60px;
+    padding: 12px;
+    margin: 10px auto;
+    background-color: #ffd15C;
+    font-weight: bold;
+    text-align: center;
+    word-break: normal;
+    cursor: pointer;
+}
+
+#pleaseWait {
+    display: none;
+    font-size: 12pt;
+    margin: 12px auto;
+    border-top: 1px solid black;
+    padding-top: 12px;
+}
+
+#score {
+    display: inline-block;
+    color: #ffd15C;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 1;
+    font-size: 42px;
+    margin-left: 16px;
+    position: relative;
+    top: -8px;
+    font-weight: bold;
+    text-shadow: 3px 3px 0 black;
+    letter-spacing: -5px;
+    font-family:'Silkscreen',Helvetica,Arial,sans-serif;
 
 }
 @keyframes block{
@@ -89,7 +133,7 @@
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 80px; /* Location of the box */
+  padding-top: 100px; /* Location of the box */
   padding-bottom: 50px;
   left: 0;
   top: 0;
@@ -156,6 +200,7 @@
     background-color: #ffd15c;
     font-weight: bold;
     text-align: center;
+    margin: 14px auto;
 }
 
 
@@ -166,3 +211,52 @@
   cursor: pointer;
 }
 
+  #startMenuContent, .modal-content  {
+    font-size: 16pt;
+  }
+    #startMenuContent img, .modal-content img {
+        width: 170px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    #startMenuContent h2, .modal-content h2 {
+        font-size: 26pt;
+        margin: 8px auto 0;
+    }
+    #startMenuContent td:first-child {
+        font-size: 26pt;
+        min-width: 60px;
+        vertical-align: top; 
+        text-align: center
+    }
+    #startMenuContent td:nth-child(2) {
+        padding: 8px 0 16px;
+        vertical-align: top; 
+    }
+
+@media only screen and (max-width: 700px) {
+  #startMenuContent, .modal-content  {
+    font-size: 12pt;
+  }
+    #startMenuContent img, .modal-content img {
+        width: 100px;
+        margin-top: 10px;
+        margin-bottom: 8px;
+    }
+        #startMenuContent h2, .modal-content h2 {
+        margin: 0 auto;
+        font-size: 20pt;
+    }
+    
+    
+    #startMenuContent td:first-child {
+        font-size: 20pt;
+        min-width: 40px;
+    }
+    #startMenuContent td:nth-child(2) {
+        padding: 0 0 16px;
+    }
+    #startBtn {
+        margin: 10px auto;
+    }
+}
