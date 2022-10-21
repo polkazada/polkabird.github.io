@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" onclick="jump()">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -7,17 +7,53 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body style="background-color: #fff2f3;">
+<div id="vidOverlay"> 
+<video id="startup" width="300" height="200" autoplay="autoplay" muted="muted">
+  <source src="https://photos.polka.ph/polkabird/kiosk-startup-screen-v2.mp4" type="video/mp4" />
+</video>
+    </div>  
+    
     <div id="game">
         
         <div id="block" class="animated"></div>
         <div id="hole" class="animated"></div>
         
-        <div id="sky"></div>
+        <div id="sky"></div>        
 
         <div id="character"></div>
-        <div id="heartcontainer"><img src="https://photos.polka.ph/polkabird/heart.png"><img src="https://photos.polka.ph/polkabird/heart.png"><img src="https://photos.polka.ph/polkabird/heart.png"><img src="https://photos.polka.ph/polkabird/heart.png"><img src="https://photos.polka.ph/polkabird/heart.png" src="https://photos.polka.ph/polkabird/heart.png"></div>
+        <div id="heartcontainer"><img id="heart5" src="https://photos.polka.ph/polkabird/heart.png"><img  id="heart4" src="https://photos.polka.ph/polkabird/heart.png"><img  id="heart3" src="https://photos.polka.ph/polkabird/heart.png"><img  id="heart2" src="https://photos.polka.ph/polkabird/heart.png"><img  id="heart1" src="https://photos.polka.ph/polkabird/heart.png"></div>
         <div id="ground"></div>
     </div>
+    <!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content" style="border-radius: 30px; text-align: center; font-size: 16pt; font-family: 'Jost',Helvetica,Arial;"><h2 style="font-size: 29pt; max-width: min(calc(100% - 60px), 560px); margin: 14px auto 0;">YOU DIED!</h2>
+    
+    <img src="https://photos.polka.ph/polkabird/sprite-dead.png" style="margin-top: 20px; width: 170px;">    
+    
+    <p>Game Over!</p>
+    <p id="score">Cumulative Score: </p>
+    <p id="livesRemaining">Lives Remaining: </p>
+    <div id="closeBtn" class="button" style="max-width: min(calc(100% - 60px), 250px); border-radius: 30px; padding: 12px 0; margin: 20px auto;     background-color: #ffd15c; font-weight: bold; text-align: center;">CONTINUE</div>
+  </div>
+    
+    </div>
+    
+    <!-- Start Menu -->
+<div id="startMenu">
+
+  <!-- Start Menu -->
+  <div id="startMenuContent" style="border-radius: 30px; text-align: center; font-size: 16pt; font-family: 'Jost',Helvetica,Arial;">
+    <h2 style="font-size: 29pt; max-width: min(calc(100% - 60px), 560px); margin: 14px auto 0;">WELCOME TO POLKA.BIRD!</h2>
+    <img src="https://photos.polka.ph/polkabird/sprite.png" style="margin-top: 20px; width: 170px;"><table style="max-width: min(calc(100% - 60px), 560px); text-align: left; margin: 0 auto;"><tbody><tr><td style="text-align: center; min-width: 60px; font-size: 26pt; vertical-align: top;">👆🏼</td><td style="vertical-align: top; padding: 8px 0 16px;">Tap the screen to flap your wings and avoid obstacles.</td></tr><tr><td style="text-align: center; min-width: 60px; font-size: 26pt; vertical-align: top;">❤️</td><td style="vertical-align: top; padding: 8px 0 16px;">You only have 5 lives to live. Make each one count!</td></tr><tr><td style="text-align: center; min-width: 60px; font-size: 26pt; vertical-align: top;">💯</td><td style="vertical-align: top; padding: 8px 0 16px;">You score +1 point for every hole you pass through.</td></tr><tr><td style="text-align: center; min-width: 60px; font-size: 26pt; vertical-align: top;">👨🏽&zwj;✈️</td><td style="vertical-align: top; padding: 8px 0 16px;">Can you get the highest score? Don't think, just do!</td></tr></tbody></table><div style="text-align: center;"></div>
+    
+    <div id="startBtn" class="button" style="max-width: min(calc(100% - 60px), 560px); border-radius: 30px; padding: 12px 0; margin: 20px auto;">Okay, LET'S FLY!</div>
+  </div>
+    
+    </div>
+
+
 </body>
 <script src="script.js"></script>
 </html>
