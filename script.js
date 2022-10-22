@@ -1,6 +1,8 @@
 var game = document.getElementById("game");
 var block = document.getElementById("block");
 var hole = document.getElementById("hole");
+var enemies = document.getElementById("enemies");
+var mountains = document.getElementById("mountains");
 var character = document.getElementById("character");
 var jumping = 0;
 var modalUp = 1;
@@ -28,6 +30,9 @@ function hideVidOverlay() {
 hole.addEventListener('animationiteration', () => {
     var random = -((Math.random()*300)+150);
     hole.style.top = random + "px";
+        enemies.style.height = (random + 500) + "px";
+    mountains.style.top =  650 + random + "px";
+    mountains.style.height = (500 - (random + 500) - 150) + "px";
     counter++;
     score.innerHTML = counter;
 });
@@ -58,6 +63,12 @@ function openModal() {
                 livesRemaining.innerHTML = 'Final Score: <span style="color: #ff004a; font-weight: bold;">' + counter + '</span><br><b>🎉 Congratulations! 🎊</b>';
                 pleaseWait.style.display = "block";
                 gameOver.innerHTML = "GAME OVER!";
+                gameOver.style.transform = "scale(1.3)";
+                gameOver.style.color = "#ff004a";
+                gameOver.style.fontFamily = "'Silkscreen',Helvetica,Arial,sans-serif";
+                gameOver.style.marginBottom = "20px";
+                gameOver.style.marginTop = "6px";
+                livesRemaining.style.fontSize = "16pt";
                };
     
 
@@ -75,10 +86,14 @@ function goToStore() {
 closeBtn.onclick = function() {
     hole.style.animationName = "none";
         block.style.animationName = "none";
+    enemies.style.animationName = "none";
+    mountains.style.animationName = "none";
         
         requestAnimationFrame(() => {
             hole.style.animationName = "";
             block.style.animationName = ""; 
+            enemies.style.animationName = "";
+            mountains.style.animationName = "";
         });
     
     character.style.top = 100 + "px";
@@ -106,6 +121,8 @@ function resumeTime(){
     modalUp = 0;
     block.style.animationPlayState = 'running';
     hole.style.animationPlayState = 'running';
+    enemies.style.animationPlayState = 'running';
+    mountains.style.animationPlayState = 'running';
     
     var normalInterval = setInterval(function(){
             var characterTop = parseInt(window.getComputedStyle(character).getPropertyValue("top"));
@@ -119,6 +136,8 @@ function resumeTime(){
         jumping = 1;
         block.style.animationPlayState = 'paused';
         hole.style.animationPlayState = 'paused';
+        enemies.style.animationPlayState = 'paused';
+        mountains.style.animationPlayState = 'paused';
         modalUp = 1;
         clearInterval(normalInterval);
         openModal();
