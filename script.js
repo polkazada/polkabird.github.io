@@ -96,7 +96,7 @@ closeBtn.onclick = function() {
             mountains.style.animationName = "";
         });
     
-    character.style.top = 100 + "px";
+    character.style.top = 225 + "px";
     modal.style.display = "none";
 
 
