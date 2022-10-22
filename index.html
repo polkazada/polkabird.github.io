@@ -16,8 +16,10 @@
     <div id="game">
         
         <div id="block" class="animated"></div>
+        <div id="enemies" class="animated"></div>
+        <div id="mountains" class="animated"></div>
+        <div 
         <div id="hole" class="animated"></div>
-        
         <div id="sky"></div>        
 
         <div id="character"></div>
@@ -31,11 +33,11 @@
   <!-- Modal content -->
   <div class="modal-content" style="border-radius: 30px; text-align: center; font-family: 'Jost',Helvetica,Arial;"><h2 id="gameOver" style="width: 100%; max-width: 560px;">YOU DIED!</h2>
     
-    <img src="https://photos.polka.ph/polkabird/sprite-dead.png">    
+    <img class="sprite" src="https://photos.polka.ph/polkabird/sprite-dead.png">    
     
     <p id="livesRemaining">Lives Remaining: </p>
     <div id="closeBtn" class="button" style="min-width: 190px; max-width: 250px; width: 100%; border-radius: 30px; padding: 12px 0; margin: 10px auto;  background-color: #ffd15c; font-weight: bold; text-align: center;">CONTINUE</div>
-    <p id="pleaseWait">It will take a few minutes for us to prepare your next game. Why not visit the <a target="_top" href="https://shop.polka.ph" style="color: #ff004a; text-decoration: underline; font-weight: bold; cursor: pointer; text-decoration-color: #ff004a;">Polka Store</a> while you wait?</p>
+    <p id="pleaseWait">We are still preparing your next game. Why not visit the <a target="_top" href="https://shop.polka.ph" style="color: #ff004a; text-decoration: underline; font-weight: bold; cursor: pointer; text-decoration-color: #ff004a;">Polka.PH Store</a> while you wait?</p>
     <div id="loadingNextGame" onclick="goToStore()">Take Me to the Polka Store</div>
 
   </div>
@@ -47,8 +49,9 @@
 
   <!-- Start Menu -->
   <div id="startMenuContent" style="border-radius: 30px; text-align: center; font-family: 'Jost',Helvetica,Arial;">
-    <h2 style="width: 100%; max-width: 560px;">WELCOME TO POLKA.BIRD!</h2>
-    <img src="https://photos.polka.ph/polkabird/sprite.png"><table style="max-width: 560px; text-align: left; margin: 0 auto;"><tbody><tr><td>👆🏼</td><td>Tap the screen to flap your wings and avoid obstacles.</td></tr><tr><td>❤️</td><td>You only have 5 lives to live. Make each one count!</td></tr><tr><td>💯</td><td>You score +1 point for every hole you pass through.</td></tr><tr><td>👨🏽&zwj;✈️</td><td>Can you get the highest score? Don't think, just do!</td></tr></tbody></table><div style="text-align: center;"></div>
+    <h2 style="display: inline-block; max-width: 560px; padding: 0 6px;">WELCOME TO</h2>
+      <img id="pbLogo" src="http://photos.polka.ph/polkabird/polka-bird-logo.png">
+    <img class="sprite" src="https://photos.polka.ph/polkabird/sprite.png" style="margin-top: 16px;"><table style="max-width: 560px; text-align: left; margin: 0 auto;"><tbody><tr><td>👆🏼</td><td>Tap the screen to flap your wings and avoid obstacles.</td></tr><tr><td>❤️</td><td>You only have 5 lives to live. Make each one count!</td></tr><tr><td>💯</td><td>You score +1 point for every hole you pass through.</td></tr><tr><td>👨🏽&zwj;✈️</td><td>Can you get the highest score? Don't think, just do!</td></tr></tbody></table><div style="text-align: center;"></div>
     
     <div id="startBtn" class="button" style="max-width: 400px; width: 100%; border-radius: 30px; padding: 12px 0;">Okay, LET'S FLY!</div>
   </div>
