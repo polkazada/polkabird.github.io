@@ -79,7 +79,7 @@ function openModal() {
 };
 
 function goToStore() {
-    window.location.href = "https://shop.polka.ph";
+    window.location.href = "https://kiosk.polka.ph";
 };
 
 // When the user clicks on <span> (x), close the modal
