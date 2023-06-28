@@ -79,7 +79,7 @@ function openModal() {
 };
 
 function goToStore() {
-    window.location.href = "https://kiosk.polka.ph";
+    window.location.href = "https://shop-polka-git-kiosk4-1-burkaloo.vercel.app/";
 };
 
 // When the user clicks on <span> (x), close the modal
